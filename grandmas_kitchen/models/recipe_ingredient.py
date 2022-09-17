@@ -1,9 +1,9 @@
 from django.db import models
-from models import Recipe, Ingredient
+from grandmas_kitchen.models import Recipe, Ingredient
 
 class RecipeIngredient(models.Model):
-    recipe = models.ForeignKey(Recipe)
-    ingredient = models.ForeignKey(Ingredient)
+    recipe = models.ManyToManyField(Recipe)
+    ingredient = models.ManyToManyField(Ingredient)
 
     def __str__(self):
         return self
