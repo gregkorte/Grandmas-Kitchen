@@ -1,0 +1,14 @@
+{%  extends 'grandmas_kitchen/index.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'grandmas_kitchen/nav.html' with nav_location=view.location %}
+<div class='centered'>
+	{% if user.is_authenticated %}
+		<h1>Hello</h1>
+		<h1>{{user}}!!</h1>
+	{% else %}
+		<h1>You are not logged in!</h1>
+	{% endif %}
+</div>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends 'grandmas_kitchen/index.html' %}
+{% block content %}
+	<div>
+		<form method='post' action="{% url 'register' %}">
+			{% csrf_token %}
+			{% if form.errors %}
+				<p>There's an error!</p>
+			{% endif %}
+
+			{{form}}
+
+			<button class='btn' type='submit' value='Register'>
+				Register
+			</button>
+		</form>
+	</div>
+{% endblock %}
